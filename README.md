@@ -24,13 +24,13 @@ from wham import Wham
 W = Wham()
 ```
 
-Add your simulations with and id, simulation time, position, equilibrium position for the spring, and spring constant in kcal/mol
+Add your simulations with an id, simulation times (time), reaction coordinates (position), equilibrium reaction coordinate for the spring (eq_position), and spring constant in (energy unit)/(mol-(reaction coordinate unit)^2) (k_spring). Note that the energy unit can be chosen when compiling WHAM and is kcal by default (see page 6 of the WHAM manual).
 
 ```python
 W.add_simulation(sim_id, time, position, eq_position, k_spring)
 ```
 
-You can plot position histograms before running WHAM
+You can plot position histograms before running WHAM.
 
 ```python
 W.plot_histograms(title='WHAM histograms', save='wham-hist.png'))
