@@ -4,8 +4,9 @@ Python wrapper for Weighted Histogram Analysis Method as implemented by Grossfie
 Tested on Version 2.0.9, 2.0.11.
 
 ## Installation
-1. Download WHAM from [here](http://membrane.urmc.rochester.edu/?page_id=126)
+1. Download and compile WHAM from [here](http://membrane.urmc.rochester.edu/?page_id=126)
 2. Install Python wrapper:
+
 ```
 pip install git+https://github.com/bnovak1/wham
 ```
@@ -24,7 +25,7 @@ from wham import Wham
 W = Wham()
 ```
 
-Add your simulations with an id, simulation times (time), reaction coordinates (position), equilibrium reaction coordinate for the spring (eq_position), and spring constant in (energy unit)/(mol-(reaction coordinate unit)^2) (k_spring). Note that the energy unit can be chosen when compiling WHAM and is kcal by default (see page 6 of the WHAM manual).
+Add your simulations with an id, simulation times (time), reaction coordinates (position), equilibrium reaction coordinate for the spring (eq_position), and spring constant in (energy unit)/(mol-(reaction coordinate unit)^2) (k_spring). Note that the energy unit can be chosen when compiling WHAM and is kcal by default (see page 6 of the [WHAM documentation](http://membrane.urmc.rochester.edu/sites/default/files/wham/doc.pdf)).
 
 ```python
 W.add_simulation(sim_id, time, position, eq_position, k_spring)
