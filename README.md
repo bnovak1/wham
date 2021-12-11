@@ -21,32 +21,30 @@ sense after you read it.
 
 ```python
 from wham import Wham
-
-
 W = Wham()
-"""
-Add your simulations with and id, simulation time, position,
-equilibrium position for the spring, and spring constant in kcal/mol
-"""
+```
+
+Add your simulations with and id, simulation time, position, equilibrium position for the spring, and spring constant in kcal/mol
+
+```python
 W.add_simulation(sim_id, time, position, eq_position, k_spring)
+```
 
-# You can plot position histograms before running WHAM
+You can plot position histograms before running WHAM
+
+```python
 W.plot_histograms(title='WHAM histograms', save='wham-hist.png'))
+````
 
-"""
-You can run WHAM 1D as follows.
-The input parameters are mostly in the same order as the WHAM executable:
-lower and upper boundary of the histogram,
-number of bins in the histogram, convergence tolerance,
-temperature at which the WHAM analysis is performed,
-number of “padding” values that should be printed for periodic PMFs, path to WHAM 1D executable,
-path to write input and output files for WHAM analysis,
-periodicity of the reaction coordinate (defaults to no periodicity),
-cleanup WHAM files after running, and finally WHAM verbosity.
-"""
+You can run WHAM 1D as follows. The input parameters are mostly in the same order as the WHAM executable: lower and upper boundary of the histogram, number of bins in the histogram, convergence tolerance, temperature at which the WHAM analysis is performed, number of “padding” values that should be printed for periodic PMFs, path to WHAM 1D executable, path to write input and output files for WHAM analysis, periodicity of the reaction coordinate (defaults to no periodicity), cleanup WHAM files after running, and finally WHAM verbosity.
+
+```python
 W.run(hist_min, hist_max, num_bins, tolerance, temperature,
       numpad, executable, directory, periodicity='', cleanup=False, verbose=True)
+```
 
-# Finally, you can plot the free energy barrier using the function below
+Finally, you can plot the free energy barrier using the function below
+
+```python
 W.plot_energy_barrier(save='wham-barrier.png'))
 ```
