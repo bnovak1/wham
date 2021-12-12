@@ -22,30 +22,30 @@ sense after you read it.
 
 ```python
 from wham import Wham
-W = Wham()
+wham_calculator = Wham()
 ```
 
 Add your simulations with an id, simulation times (time), reaction coordinates (position), equilibrium reaction coordinate for the spring (eq_position), and spring constant in (energy unit)/(mol-(reaction coordinate unit)^2) (k_spring). Note that the energy unit can be chosen when compiling WHAM and is kcal by default (see page 6 of the [WHAM documentation](http://membrane.urmc.rochester.edu/sites/default/files/wham/doc.pdf)).
 
 ```python
-W.add_simulation(sim_id, time, position, eq_position, k_spring)
+wham_calculator.add_simulation(sim_id, time, position, eq_position, k_spring)
 ```
 
 You can plot position histograms before running WHAM.
 
 ```python
-W.plot_histograms(title='WHAM histograms', save='wham-hist.png'))
+wham_calculator.plot_histograms(title='WHAM histograms', save='wham-hist.png')
 ````
 
 You can run WHAM 1D as follows. The input parameters are mostly in the same order as the WHAM executable: lower and upper boundary of the histogram, number of bins in the histogram, convergence tolerance, temperature at which the WHAM analysis is performed, number of “padding” values that should be printed for periodic PMFs, path to WHAM 1D executable, path to write input and output files for WHAM analysis, periodicity of the reaction coordinate (defaults to no periodicity), cleanup WHAM files after running, and finally WHAM verbosity.
 
 ```python
-W.run(hist_min, hist_max, num_bins, tolerance, temperature,
+wham_calculator.run(hist_min, hist_max, num_bins, tolerance, temperature,
       numpad, executable, directory, periodicity='', cleanup=False, verbose=True)
 ```
 
 Finally, you can plot the free energy barrier using the function below
 
 ```python
-W.plot_energy_barrier(save='wham-barrier.png'))
+wham_calculator.plot_energy_barrier(save='wham-barrier.png'))
 ```
