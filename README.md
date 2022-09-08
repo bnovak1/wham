@@ -8,7 +8,7 @@ Tested on Version 2.0.9, 2.0.11.
 2. Install Python wrapper:
 
 ```
-pip install git+https://github.com/bnovak1/wham
+pip install wham
 ```
 
 ## Usage
